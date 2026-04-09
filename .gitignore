@@ -1,0 +1,10 @@
+# Obsidian workspace files (personal, not needed in git)
+wiki/.obsidian/workspace.json
+wiki/.obsidian/workspace-mobile.json
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Large PDF files (optional - uncomment if you don't want PDFs in git)
+# raw/papers/*.pdf
