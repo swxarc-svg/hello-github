@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "eb19057ec5403660",
+        "id": "4c6175af5551da05",
         "type": "tabs",
         "children": [
           {
-            "id": "59e65bf645cb2ba2",
+            "id": "07bffa8146f746a1",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "raw/articles/最近爆火的 Harness Engineering 到底是个啥？一期讲透！.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "最近爆火的 Harness Engineering 到底是个啥？一期讲透！"
+              "title": "新分頁"
             }
           }
         ]
@@ -161,6 +157,16 @@
               "icon": "lucide-list",
               "title": "大綱"
             }
+          },
+          {
+            "id": "f34380dda73ba103",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {},
+              "icon": "calendar-with-checkmark",
+              "title": "Calendar"
+            }
           }
         ]
       }
@@ -177,14 +183,26 @@
       "daily-notes:開啟今天的每日筆記": false,
       "templates:插入模板": false,
       "command-palette:開啟命令面板": false,
-      "bases:建立新的 base": false
+      "bases:建立新的 base": false,
+      "marp-slides:Show Slide Preview": false,
+      "obsidian-git:Open Git source control": false,
+      "templater-obsidian:Templater": false
     }
   },
-  "active": "59e65bf645cb2ba2",
+  "active": "07bffa8146f746a1",
   "lastOpenFiles": [
-    "raw/articles/最近爆火的 Harness Engineering 到底是个啥？一期讲透！.md",
-    "articles/最近爆火的 Harness Engineering 到底是个啥？一期讲透！.md",
-    "raw/articles/Unconfirmed 461135.crdownload",
-    "articles"
+    "wiki/sources/ghoniem-2025-albedo-shading-thermal-comfort.md",
+    "README.md",
+    "schema/CLAUDE.md",
+    "raw/papers/Adriaenssens 等 - 2014 - Dialectic Form Finding of Passive and Adaptive Shading Enclosures.pdf",
+    "raw/articles/ITECH Research Pavilion 2024 _ Institute of Building Structures and Structural Design.md",
+    "raw/articles/Unconfirmed 824285.crdownload",
+    "raw/clips/ScreenShot_2026-04-09_210611_373.png",
+    "raw/clips/Image_20260404223755_153_24.png",
+    "raw/articles/SCS丨 分析沿海城市热舒适度的空间差异：基于局部气候区的多参数比较研究.md",
+    "raw/articles/研究方法｜范围综述scoping review.md",
+    "raw/articles/Unconfirmed 602629.crdownload",
+    "wiki/synthesis/literature-review-report-draft.md",
+    "Clippings"
   ]
 }

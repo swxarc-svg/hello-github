@@ -13,10 +13,12 @@ The wiki is maintained by an LLM agent (you). The human researcher directs sourc
 ```
 phd-wiki/
 ├── raw/                    # Immutable source materials — NEVER modify
-│   ├── papers/             # PDF research papers
+│   ├── papers/             # PDF research papers (copied from Zotero storage)
 │   ├── articles/           # Web articles converted to .md (via Obsidian Web Clipper)
 │   ├── assets/             # Images, diagrams, downloaded figures
-│   └── clips/              # Quick notes, screenshots, conference photos
+│   ├── clips/              # Quick notes, screenshots, conference photos
+│   └── zotero-library.bib/ # Zotero BibTeX export — the master library catalogue
+│       └── USJ ARCHITECTURE PHD.bib
 ├── wiki/                   # LLM-maintained knowledge base (Obsidian vault)
 │   ├── sources/            # One page per ingested source (paper/article summary)
 │   ├── concepts/           # Topic pages (e.g., "CFD wind simulation", "retractable shading")
@@ -179,6 +181,50 @@ Which sources support which claims.
 
 ## Next steps
 ```
+
+---
+
+## Zotero BibTeX library
+
+`raw/zotero-library.bib/USJ ARCHITECTURE PHD.bib` is a living export of the researcher's Zotero library. It is the **authoritative catalogue** of all papers in scope — a superset of what has been ingested into the wiki.
+
+### Structure of each entry
+
+```bibtex
+@article{
+  title = {...},
+  author = {...},
+  date = {YYYY-MM-DD},
+  journaltitle = {...},
+  doi = {...},
+  abstract = {...},
+  annotation = {Read_Status: New | In Progress | Read\n
+                Read_Status_Date: ...},
+  file = {C:\Users\WYATT\Zotero\storage\XXXXXXXX\filename.pdf;...}
+}
+```
+
+Note: entries lack an explicit citekey (the `{` after `@article` has no key before the fields). Construct the wiki source filename from author + year + short title instead.
+
+### Read_Status meanings
+
+| Value | Meaning |
+|-------|---------|
+| `New` | In Zotero, not yet read or ingested |
+| `In Progress` | Researcher is currently reading — prioritise for ingest discussion |
+| `Read` | Fully read — may be ready to ingest if not already in wiki |
+
+### How to use the BibTeX file
+
+**Identifying ingestion candidates**: When the researcher asks what to read next, or before a lint pass, compare BibTeX entries against `wiki/index.md`. Papers in the BibTeX but not in the wiki are the ingest queue. Prioritise `In Progress` > `Read` > `New`.
+
+**Extracting metadata**: When ingesting a paper, use the BibTeX entry as the authoritative source for: title, authors, year, journal, volume, pages, DOI. Do not guess these from the PDF text.
+
+**Finding the PDF**: The `file = ` field contains the Zotero local storage path (`C:\Users\WYATT\Zotero\storage\XXXXXXXX\filename.pdf`). Use this path to read the PDF. If a PDF has also been copied to `raw/papers/`, use `raw/papers/` and record that path in the source page's `raw_path` field.
+
+**Ingesting without a PDF**: If only the BibTeX entry is available (no PDF accessible), ingest from the abstract + DOI. Mark `confidence: low` and note "ingested from abstract only — PDF not read" in the Methodology section.
+
+**Keeping in sync**: The researcher re-exports from Zotero periodically. On each new export, the BibTeX may have new entries or updated `Read_Status` values. During lint, flag BibTeX entries that are `Read` or `In Progress` but missing from the wiki.
 
 ---
 
